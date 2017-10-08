@@ -96,6 +96,7 @@ int main(int argc,char *argv[]) {
     ti=mseconds(); 
     sec(N,a,b,c);
     tf=mseconds(); 
+    fprintf(stats_file, "%Ld\n", (tf-ti));
       if(i!=0) tt+=tf-ti;
       escribirresult(c,N*N,salida);
       free(a);
