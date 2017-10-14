@@ -7,82 +7,88 @@
 #include "io.h"
 
 
-void trasponer_especial(double *db,int *fb,int *cb,int ndb, double *dr, int *fr, int *cr){
-  int i, cact, csig, csigsig;
-  cact = cb[0];
-  for(int j=1; j<ndb; j++) {
-    if(cact > cb[j]){
-      cact = cb[j];
-    }
-  }
-  i=0;
-  while(i<ndb & cact < INT_MAX) {
-    csig = INT_MAX;
-    for(int j=0; j<ndb; j++) {
-      if(cact == cb[j]){
-        dr[i] = db[j];
-        fr[i] = cact;
-        cr[i] = fb[j];
-        i++;
-        if(i>=ndb)
-          return;
-      } else if ( cb[j] > cact && cb[j] < csig) {
-        csig = cb[j];  // siguiente columna a buscar
-      }
-    }
-    cact = csig;
+void fast_traspose(double *db,int *fb,int *cb,int ndb, int filas, int col, double *dr, int *fr, int *cr){
+
+  int i,colNum,j;
+  int total[ndb], index[ndb];
+  for(i=0;i<col;i++) 
+    total[i]=0; 
+  for(i=0;i<ndb;i++) 
+  { 
+    colNum=cb[i];
+    total[colNum]++;
+  } 
+  index[0]=0; 
+  for(i=1;i<col;i++) 
+    index[i]=index[i-1]+total[i-1]; 
+
+  for(i=0;i<ndb;i++) 
+  { 
+    colNum=cb[i];
+    j=index[colNum];
+    index[colNum]++;
+    fr[j]=cb[i];
+    cr[j]=fb[i];
+    dr[j]=db[i];
   }
 
 }
 
 
-void matriz_vector_disperso_ld(double *dm,int *fm,int *cm,int ndm,double *dv,int *fv,int ndv,double *r,int ldr)
+int matriz_matriz_disperso(double *da,int *fa,int *ca,int nda, int filas_a, int col_a_filas_b,
+  double *db,int *fb,int *cb,int ndb, int col_b,
+  double *dc,int *fc,int *cc) 
 {
-  int i,j,fact;
-  double s;
+  int i, j, k, ii, fact, cact;
+  double sum;
 
-  i=0;
-  while(i<ndm)
-  {
-    fact=fm[i]; // fila actual
-    j=0;
-    s=0.;
-    while(i<ndm && fm[i]==fact)
-    {
-      while(j<ndv && fv[j]<cm[i])
-        j++;
-      if(j<ndv && fv[j]==cm[i])
-        s+=dm[i]*dv[j];
-      r[fact*ldr]=s;
-      i++;
-    }
-  }
-}
-
-
-void matriz_matriz_disperso(double *da,int *fa,int *ca,int nda, 
-                            double *db,int *fb,int *cb,int ndb,
-                            double *c,int fc,int cc,int ldc) 
-{
-
-  // Suponemos fm ordenado y cm ordenado en bloques respecto de fm
   double *dbt = (double *) malloc(sizeof(double)*ndb);
   int *fbt = (int *) malloc(sizeof(int)*ndb);
   int *cbt = (int *) malloc(sizeof(int)*ndb);
-  trasponer_especial(db, fb, cb, ndb, dbt, fbt, cbt);
+  fast_traspose(db, fb, cb, ndb, col_a_filas_b, col_b, dbt, fbt, cbt);
 
-  int col_act_init, col_act, col_act_fin;
-  int j=0;
-  while(j<ndb){
-    col_act_init=j;
-    col_act = fbt[j];
-    while(j<ndb && fbt[j]==col_act)
-      j++;
-    col_act_fin=j; //points to the last element + 1
-
-    matriz_vector_disperso_ld(da, fa, ca, nda, &dbt[col_act_init], &cbt[col_act_init], (col_act_fin-col_act_init), &c[col_act], ldc);
-
+  k=0; // iterar sparce matrix c
+  i=0; // iterar sparse a
+  while(i<nda) // Recorro filas de a
+  {
+    ii=i; // mantener fila de la multiplicación
+    j=0;
+    while(j<ndb) // Recorro filas de bt == columnas de b
+    {
+      fact=fa[i];
+      cact=fbt[j];
+      sum=0.;
+      while(i<nda && j<ndb && fact==fa[i] && cact==fbt[j]) // Me mantengo en fila fact de a, columna cact de b (fila de bt)
+      {
+        if(ca[i]==cbt[j]) {
+          sum += da[i] * dbt[j];
+          i++; j++;
+        } 
+        else if(ca[i]<cbt[j])
+                i++;
+            else 
+                j++;
+      }
+      if(sum>=0.000001) {
+        dc[k]=sum;
+        fc[k]=fact;
+        cc[k]=cact;
+        k++;
+      }
+      if(j<ndb)
+        i=ii; // volver al inicio de la fila fact de a
+      while(cact==fbt[j] && j<ndb) 
+        j++; // ir a la siguiente columna de b / fila de bt
+    }
+    while(fact==fa[i] && i<nda)
+        i++;
   }
+
+  free(dbt);
+  free(fbt);
+  free(cbt);
+
+  return k; // ndc
 
 }
 
@@ -119,22 +125,30 @@ int main(int argc,char **argv)
   double *db = (double *) malloc(sizeof(double)*ndb);
   int *fb = (int *) malloc(sizeof(int)*ndb);
   int *cb = (int *) malloc(sizeof(int)*ndb);
-  double *c = (double *) calloc(sizeof(double),filas_a*col_b); // init with 0's
+  double *dc = (double *) malloc(sizeof(double)*filas_a*col_b); // worst case scenario
+  int *fc = (int *) malloc(sizeof(int)*filas_a*col_b);
+  int *cc = (int *) malloc(sizeof(int)*filas_a*col_b);
+  int ndc = filas_a*col_b;
 
+  printf("Generando matrices \n");
   generar_matriz_dispersa(da,filas_a,col_a,fa,ca,nda,l,u);
+  printf("Generada matriz A \n");  
   generar_matriz_dispersa(db,filas_b,col_b,fb,cb,ndb,l,u);
+  printf("Generada matriz B \n");
+  
 #ifdef DEBUG
   escribir_matriz_dispersa(da,fa,ca,nda);
   escribir_matriz_dispersa(db,fb,cb,ndb);
 #endif
 
+printf("Entrando a matriz_matriz_disperso \n");
 
 gettimeofday(tv,tz);
 si=(tv->tv_sec);
 ti1=(tv->tv_usec);
 ti1=si*1000000+ti1;
 
-matriz_matriz_disperso(da, fa, ca, nda, db, fb, cb, ndb, c, filas_a, col_b, col_b);
+ndc = matriz_matriz_disperso(da, fa, ca, nda, filas_a, col_a, db, fb, cb, ndb, col_b, dc, fc, cc);
 
 
 gettimeofday(tv,tz);
@@ -144,7 +158,8 @@ tf1=sf*1000000+tf1;
 printf("Tamaño %d: %.6lf seg \n",filas_a,(tf1-ti1)/1000000.);
 
 #ifdef DEBUG
-  escribir_matriz_ld(c,filas_a,col_b,col_b);
+  //escribir_matriz_ld(c,filas_a,col_b,col_b);
+  escribir_matriz_dispersa(dc,fc,cc,ndc);
 #endif
 
   free(da);
@@ -153,7 +168,9 @@ printf("Tamaño %d: %.6lf seg \n",filas_a,(tf1-ti1)/1000000.);
   free(db);
   free(fb);
   free(cb);
-  free(c);
+  free(dc);
+  free(fc);
+  free(cc);
 
   return 0;
 }
