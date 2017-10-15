@@ -10,20 +10,20 @@
 void fast_traspose(double *db,int *fb,int *cb,int ndb, int filas, int col, double *dr, int *fr, int *cr){
 
   int i,colNum,j;
-  int total[ndb], index[ndb];
-  for(i=0;i<col;i++) 
-    total[i]=0; 
-  for(i=0;i<ndb;i++) 
-  { 
+  int total[col], index[col];
+  for(i=0;i<col;i++)
+    total[i]=0;
+  for(i=0;i<ndb;i++)
+  {
     colNum=cb[i];
     total[colNum]++;
-  } 
-  index[0]=0; 
-  for(i=1;i<col;i++) 
-    index[i]=index[i-1]+total[i-1]; 
+  }
+  index[0]=0;
+  for(i=1;i<col;i++)
+    index[i]=index[i-1]+total[i-1];
 
-  for(i=0;i<ndb;i++) 
-  { 
+  for(i=0;i<ndb;i++)
+  {
     colNum=cb[i];
     j=index[colNum];
     index[colNum]++;
