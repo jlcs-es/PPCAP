@@ -66,7 +66,7 @@ void escribir_matriz_ld(double *a,int n,int m,int ld)
 
 void generar_matriz_dispersa_fast(double *m,int filas,int columnas,int *fm,int *cm,int ndm,double l,double u)
 {
-  int i,rowNum,j,k,c;
+  int i,j,k,h,c,temp, rowNum;
   int total[filas], index[filas];
   for(i=0;i<filas;i++) 
     total[i]=0; 
@@ -81,51 +81,21 @@ void generar_matriz_dispersa_fast(double *m,int filas,int columnas,int *fm,int *
     index[i]=index[i-1]+total[i-1];
   }
   for(i=0;i<filas;i++){
-    if(total[i]>0)
-      cm[index[i]]=(int) ((double) rand()/RAND_MAX*columnas);
-    for(j=1;j<total[i];j++){
-      fm[index[i]+j] = i;
-      k=j;
+    for(j=0;j<total[i];j++){
+      fm[index[i]+j] = i; // campo fila
+      k=index[i]+j;                // campo columna:
       c=(int) ((double) rand()/RAND_MAX*columnas);
-      // TODO reordenar dentro de la fila actual
-      // ir hacia atrás mientras fila actual && get ; comprobar == o <
-    }
-  }
-  
-
-  for(i=0;i<ndb;i++) 
-  { 
-    rowNum=cb[i];
-    j=index[rowNum];
-    index[rowNum]++;
-    fr[j]=cb[i];
-    cr[j]=fb[i];
-    dr[j]=db[i];
-  }
-
-
-  int i,j,k,f,c;
- 
-  for(i=0;i<ndm;i++)
-  {
-    f=(int) ((double) rand()/RAND_MAX*filas);
-    c=(int) ((double) rand()/RAND_MAX*columnas);
-    j=0;
-    while(j<i && (fm[j]<f || (fm[j]==f && cm[j]<c)))
-      j++;
-    if(j<i && fm[j]==f && cm[j]==c)
-      i--;
-    else
-    {
-      for(k=i;k>j;k--)
-      {
-        m[k]=m[k-1];
-        fm[k]=fm[k-1];
-        cm[k]=cm[k-1];
+      while(fm[k-1]==i && c<cm[k-1])  { // ¿puedo ponerlo en k-1? : nos mantenemos en la fila i Y el elemento previo es menor
+        k--;
       }
-      m[j]=((double) rand()/RAND_MAX)*(u-l)+l;
-      fm[j]=f;
-      cm[j]=c;
+      if(fm[k-1]==i && c==cm[k-1])
+        j--;
+      else {
+        for(h=index[i]+j;h>k;h--) { // solo movemos columnas generadas dentro de la misma fila, y solo el campo columna, los datos aleatorios nos dan igual uno que otro
+          cm[h]=cm[h-1];
+        }
+        cm[k]=c;
+      }
     }
   }
 }

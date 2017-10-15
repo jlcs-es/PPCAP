@@ -131,9 +131,32 @@ int main(int argc,char **argv)
   int ndc = filas_a*col_b;
 
   printf("Generando matrices \n");
-  generar_matriz_dispersa(da,filas_a,col_a,fa,ca,nda,l,u);
+  gettimeofday(tv,tz);
+  si=(tv->tv_sec);
+  ti1=(tv->tv_usec);
+  ti1=si*1000000+ti1;
+  
+  generar_matriz_dispersa_fast(da,filas_a,col_a,fa,ca,nda,l,u);
+
+  gettimeofday(tv,tz);
+  sf=(tv->tv_sec);
+  tf1=(tv->tv_usec);
+  tf1=sf*1000000+tf1;
+  printf("Tamaño %d: %.6lf seg \n",filas_a,(tf1-ti1)/1000000.);
   printf("Generada matriz A \n");  
-  generar_matriz_dispersa(db,filas_b,col_b,fb,cb,ndb,l,u);
+
+  gettimeofday(tv,tz);
+  si=(tv->tv_sec);
+  ti1=(tv->tv_usec);
+  ti1=si*1000000+ti1;
+
+  generar_matriz_dispersa_fast(db,filas_b,col_b,fb,cb,ndb,l,u);
+
+  gettimeofday(tv,tz);
+  sf=(tv->tv_sec);
+  tf1=(tv->tv_usec);
+  tf1=sf*1000000+tf1;
+  printf("Tamaño %d: %.6lf seg \n",filas_a,(tf1-ti1)/1000000.);
   printf("Generada matriz B \n");
   
 #ifdef DEBUG
