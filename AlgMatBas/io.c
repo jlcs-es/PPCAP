@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void generar_vector(double *v,int n,double l,double u)
 {
@@ -64,38 +65,40 @@ void escribir_matriz_ld(double *a,int n,int m,int ld)
 }
 
 
-void generar_matriz_dispersa_fast(double *m,int filas,int columnas,int *fm,int *cm,int ndm,double l,double u)
-{
+void generar_matriz_dispersa_fast(double *m,int filas,int columnas,int *fm,int *cm,int ndm,double l,double u){ //JL
   int i,j,k,h,c,temp, rowNum;
   int total[filas], index[filas];
-  for(i=0;i<filas;i++) 
-    total[i]=0; 
-  for(i=0;i<ndm;i++) 
-  { 
-    rowNum=(int) ((double) rand()/RAND_MAX*filas);;
-    total[rowNum]++;
-    m[i]=((double) rand()/RAND_MAX)*(u-l)+l; // creamos de paso los datos aleatorios
+  
+  memset(total, 0, sizeof(int)*filas);
+  for(i=0; i < ndm; i++){ 
+    rowNum= (int)(1.*rand()/RAND_MAX * filas);
+    if(total[rowNum] < columnas){ 
+      total[rowNum]++;
+      m[i] = (1.*rand()/RAND_MAX)*(u-l)+l; // creamos de paso los datos aleatorios
+    } else {
+      i--;
+    }
   }
-  index[0]=0;
-  for(i=1;i<filas;i++){
-    index[i]=index[i-1]+total[i-1];
-  }
-  for(i=0;i<filas;i++){
-    for(j=0;j<total[i];j++){
-      fm[index[i]+j] = i; // campo fila
-      k=index[i]+j;                // campo columna:
-      c=(int) ((double) rand()/RAND_MAX*columnas);
-      while(fm[k-1]==i && c<cm[k-1])  { // ¿puedo ponerlo en k-1? : nos mantenemos en la fila i Y el elemento previo es menor
-        k--;
-      }
-      if(fm[k-1]==i && c==cm[k-1])
-        j--;
-      else {
-        for(h=index[i]+j;h>k;h--) { // solo movemos columnas generadas dentro de la misma fila, y solo el campo columna, los datos aleatorios nos dan igual uno que otro
-          cm[h]=cm[h-1];
-        }
-        cm[k]=c;
-      }
+  
+  index[0] = 0;
+  for(i=1; i < filas; i++)
+    index[i] = index[i-1]+total[i-1];
+  
+  for(i=0; i < filas; i++){
+    for(j=0; j < total[i]; j++){
+    k = index[i]+j;                
+    fm[k] = i; // campo fila
+    c = (int) (1.*rand()/RAND_MAX * columnas); // campo columna
+    
+    for(; k > 0 && fm[k-1] == i && c < cm[k-1]; k--);  // ¿puedo ponerlo en k-1? : nos mantenemos en la fila i Y el elemento previo es menor  
+    if(k > 0 && fm[k-1] == i && c == cm[k-1]){ // ya existe
+      j--;
+      continue;
+    }
+    
+    if( k < index[i]+j ) //desplazamos para mantener el orden ascendente de las columnas
+      memmove(cm+k+1, cm+k, sizeof(int) * (index[i] + j - k));
+    cm[k] = c;
     }
   }
 }
