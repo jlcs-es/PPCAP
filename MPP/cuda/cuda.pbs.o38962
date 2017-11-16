@@ -1,0 +1,44 @@
+Process Running on Node: jupiter
+Directory is /home_nfs/mpp17-45/algmatpar
+Cuda 4
+10
+562
+321
+403
+467
+3850
+Cuda 8
+10
+562
+321
+403
+467
+2157
+Cuda 12
+10
+562
+321
+403
+467
+4184
+Cuda 16
+10
+562
+321
+403
+467
+4611
+Cuda 24
+10
+562
+321
+403
+467
+5386
+Cuda 32
+10
+562
+321
+403
+467
+6720

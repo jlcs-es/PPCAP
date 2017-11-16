@@ -1,0 +1,1 @@
+nvcc -Xcompiler -I/usr/local/cuda/include -L/usr/local/cuda/lib64 -lcudart esquema-cuda.cu 2017Final-G-CUDA-FranciscoMunoz170920.cu -o $1
