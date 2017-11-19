@@ -1,0 +1,43 @@
+#!/bin/bash
+##############################################################################
+# Select Execution Queue
+##############################################################################
+#PBS -q batch
+##############################################################################
+# Maximum Execution Time
+##############################################################################
+#PBS -l walltime=00:10:00
+##############################################################################
+# Number of nodes to run on
+##############################################################################
+#PBS -l nodes=venus:ppn=1
+##############################################################################
+# Load system-wide modules
+##############################################################################
+source /etc/profile.d/modules.sh
+##############################################################################
+# Load Intel-x64 Environment
+##############################################################################
+source /opt/intel/composerxe/bin/compilervars.sh intel64
+##############################################################################
+# Switch to the job's working directory, provided by PBS in PBS_O_WORKDIR
+##############################################################################
+cd $PBS_O_WORKDIR
+##############################################################################
+# Run the executable
+##############################################################################
+echo Process Running on Node: `hostname`
+echo Directory is `pwd`
+##############################################################################
+echo "Offload"
+for i in 5000 6000 7000; do echo -e "$i $i $i 10 20" | ./matriz_matriz_tras_offload; done
+echo "Static"
+for i in 5000 6000 7000; do echo -e "$i $i $i 10 20" | ./matriz_matriz_tras_static; done
+echo "Static 5"
+for i in 5000 6000 7000; do echo -e "$i $i $i 10 20" | ./matriz_matriz_tras_static_5; done
+echo "Dynamic"
+for i in 5000 6000 7000; do echo -e "$i $i $i 10 20" | ./matriz_matriz_tras_dynamic; done
+echo "Collapse"
+for i in 5000 6000 7000; do echo -e "$i $i $i 10 20" | ./matriz_matriz_tras_collapse; done
+echo "Simd"
+for i in 5000 6000 7000; do echo -e "$i $i $i 10 20" | ./matriz_matriz_tras_simd; done
