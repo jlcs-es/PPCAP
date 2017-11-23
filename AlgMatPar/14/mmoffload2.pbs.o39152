@@ -1,0 +1,9 @@
+Process Running on Node: venus
+Directory is /home_nfs/mpp17-45/algmatpar/14
+Simd 2
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 2000: 2.897114 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 3000: 4.431727 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 4000: 6.941834 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 5000: 12.246327 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 6000: 19.320921 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 7000: 30.047152 seg 

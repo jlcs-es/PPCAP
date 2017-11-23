@@ -1,0 +1,26 @@
+Process Running on Node: venus
+Directory is /home_nfs/mpp17-45/algmatpar/14
+Offload
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 2000: 2.921431 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 3000: 4.335710 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 4000: 6.903049 seg 
+Static
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 2000: 2.917755 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 3000: 4.537175 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 4000: 6.978585 seg 
+Static 5
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 2000: 2.977286 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 3000: 4.357692 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 4000: 7.292801 seg 
+Dynamic
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 2000: 2.939719 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 3000: 4.299595 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 4000: 7.069046 seg 
+Collapse
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 2000: 2.744677 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 3000: 3.840926 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 4000: 6.963857 seg 
+Simd
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 2000: 3.594959 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 3000: 6.200148 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 4000: 17.879717 seg 
