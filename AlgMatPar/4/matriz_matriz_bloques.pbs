@@ -1,0 +1,31 @@
+#!/bin/bash
+#PBS -q batch
+#PBS -l nodes=marte:ppn=1
+#PBS -l walltime=01:00:00
+#============= INICIO ================
+
+#Cargamos entorno de ejecucion
+source /etc/profile.d/modules.sh
+
+# en este caso no hace falta cargar ningun modulo
+# module load nada
+
+# Nos aseguramos que estamos en el directorio desde el que se envio el trabajo con qsub
+echo "Me muevo del directorio $PWD al directorio de trabajo $PBS_O_WORKDIR"
+cd $PBS_O_WORKDIR
+
+echo "Nodo donde se ha planificado el trabajo:"
+cat $PBS_NODEFILE
+
+echo "Ahora ejecutamos las tareas secuenciales..."
+
+#./matriz_matriz < matriz_matriz.input
+echo "omp int"
+for i in 500 1000 2000 3000 4000; do echo -e "$i $i $i 25 10 20" | ./matriz_matriz_bloques_no_mult_omp_int; done
+for i in 500 1000 2000 3000 4000; do echo -e "$i $i $i 50 10 20" | ./matriz_matriz_bloques_no_mult_omp_int; done
+for i in 500 1000 2000 3000 4000; do echo -e "$i $i $i 100 10 20" | ./matriz_matriz_bloques_no_mult_omp_int; done
+echo "omp ext"
+for i in 500 1000 2000 3000 4000; do echo -e "$i $i $i 25 10 20" | ./matriz_matriz_bloques_no_mult_omp_ext; done
+for i in 500 1000 2000 3000 4000; do echo -e "$i $i $i 50 10 20" | ./matriz_matriz_bloques_no_mult_omp_ext; done
+for i in 500 1000 2000 3000 4000; do echo -e "$i $i $i 100 10 20" | ./matriz_matriz_bloques_no_mult_omp_ext; done
+#================ FIN =================

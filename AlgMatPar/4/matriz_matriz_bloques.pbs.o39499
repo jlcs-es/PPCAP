@@ -1,0 +1,36 @@
+Me muevo del directorio /home_nfs/mpp17-45 al directorio de trabajo /home_nfs/mpp17-45/algmatpar/4
+Nodo donde se ha planificado el trabajo:
+marte
+Ahora ejecutamos las tareas secuenciales...
+omp int
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 500, bloque 25: 0.074525 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 1000, bloque 25: 0.567204 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 2000, bloque 25: 4.449876 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 3000, bloque 25: 14.790170 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 4000, bloque 25: 35.241169 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 500, bloque 50: 0.053506 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 1000, bloque 50: 0.350413 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 2000, bloque 50: 2.735158 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 3000, bloque 50: 9.259358 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 4000, bloque 50: 21.996043 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 500, bloque 100: 0.047331 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 1000, bloque 100: 0.315868 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 2000, bloque 100: 2.395529 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 3000, bloque 100: 8.036172 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 4000, bloque 100: 18.861149 seg
+omp ext
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 500, bloque 25: 0.049491 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 1000, bloque 25: 0.303321 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 2000, bloque 25: 2.387386 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 3000, bloque 25: 7.748638 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 4000, bloque 25: 18.723906 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 500, bloque 50: 0.051893 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 1000, bloque 50: 0.329063 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 2000, bloque 50: 2.177237 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 3000, bloque 50: 6.901120 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 4000, bloque 50: 16.996734 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 500, bloque 100: 0.054400 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 1000, bloque 100: 0.328252 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 2000, bloque 100: 2.454313 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 3000, bloque 100: 7.003805 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tama�o de bloque (divisor de los tama�os de las matrices): De los valores inferior y superior: Tama�o matriz 4000, bloque 100: 17.380692 seg
