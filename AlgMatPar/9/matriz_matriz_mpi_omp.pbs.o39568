@@ -1,0 +1,5 @@
+Master Process Running on Node: jupiter
+Directory is /home_nfs/mpp17-45/algmatpar/9
+PBS has allocated the following nodes: jupiter jupiter jupiter jupiter jupiter jupiter jupiter jupiter jupiter jupiter jupiter jupiter venus venus venus venus venus venus venus venus venus venus venus venus
+De el tamaño N :De el numero de hilos openmp: De los valores inferior y superior: Tamaño matriz 5000 - MPI NP 24 - OMP NT 1 : 44.277304 seg
+De el tamaño N :De el numero de hilos openmp: De los valores inferior y superior: Tamaño matriz 6000 - MPI NP 24 - OMP NT 1 : 70.513559 seg

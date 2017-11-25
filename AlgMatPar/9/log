@@ -1,0 +1,4 @@
+39566 single thread
+39567 24 omp threads
+39568 12jup+12ven mpi nodes
+39571 12jup+12ven mpi nodes 2 omp threads
