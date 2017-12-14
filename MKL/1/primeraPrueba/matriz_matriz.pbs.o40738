@@ -1,0 +1,16 @@
+Me muevo del directorio /home_nfs/mpp17-45 al directorio de trabajo /home_nfs/mpp17-45/blas
+Nodo donde se ha planificado el trabajo:
+saturno
+Ahora ejecutamos las tareas secuenciales...
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 2000: 22.665726 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 3000: 75.494501 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 4000: 177.077932 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tamaño de bloque (divisor de los tamaños de las matrices): De los valores inferior y superior: Tamaño matriz 2000, bloque 25: 13.496091 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tamaño de bloque (divisor de los tamaños de las matrices): De los valores inferior y superior: Tamaño matriz 3000, bloque 25: 42.318879 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tamaño de bloque (divisor de los tamaños de las matrices): De los valores inferior y superior: Tamaño matriz 4000, bloque 25: 100.471517 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tamaño de bloque (divisor de los tamaños de las matrices): De los valores inferior y superior: Tamaño matriz 2000, bloque 50: 12.777352 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tamaño de bloque (divisor de los tamaños de las matrices): De los valores inferior y superior: Tamaño matriz 3000, bloque 50: 40.772234 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tamaño de bloque (divisor de los tamaños de las matrices): De los valores inferior y superior: Tamaño matriz 4000, bloque 50: 95.693469 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tamaño de bloque (divisor de los tamaños de las matrices): De los valores inferior y superior: Tamaño matriz 2000, bloque 100: 14.281152 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tamaño de bloque (divisor de los tamaños de las matrices): De los valores inferior y superior: Tamaño matriz 3000, bloque 100: 45.684251 seg
+De las filas y columnas de la primera matriz y las columnas de la segunda :De el tamaño de bloque (divisor de los tamaños de las matrices): De los valores inferior y superior: Tamaño matriz 4000, bloque 100: 112.802174 seg

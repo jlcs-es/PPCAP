@@ -1,11 +1,12 @@
 #!/bin/bash
 #PBS -q batch
-#PBS -l nodes=saturno:ppn=1
+#PBS -l nodes=jupiter:ppn=1
 #PBS -l walltime=01:00:00
 #============= INICIO ================
 
 #Cargamos entorno de ejecucion
 source /etc/profile.d/modules.sh
+source /opt/intel/composerxe/bin/compilervars.sh intel64
 
 # en este caso no hace falta cargar ningun modulo
 # module load nada
@@ -19,9 +20,10 @@ cat $PBS_NODEFILE
 
 echo "Ahora ejecutamos las tareas secuenciales..."
 
-#./matriz_matriz < matriz_matriz.input
+#=============== TESTS ================
 for i in 2000 3000 4000; do echo -e "$i $i $i 10 20" | ./matriz_matriz_tras; done
 for i in 2000 3000 4000; do echo -e "$i $i $i 25 10 20" | ./matriz_matriz_bloques; done
 for i in 2000 3000 4000; do echo -e "$i $i $i 50 10 20" | ./matriz_matriz_bloques; done
 for i in 2000 3000 4000; do echo -e "$i $i $i 100 10 20" | ./matriz_matriz_bloques; done
+for i in 2000 3000 4000; do echo -e "$i $i $i 10 20" | ./matriz_matriz_mkl; done
 #================ FIN =================

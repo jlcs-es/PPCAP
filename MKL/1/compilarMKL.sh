@@ -1,0 +1,1 @@
+icc -o $1 $1.c io.c -lm -O3 -mkl

@@ -131,6 +131,9 @@ main()
   escribir_matriz_ld(a,fa,ca,lda);
 #endif
 
+  mkl_set_dynamic( 0 );
+  mkl_set_num_threads( 1 );
+
   gettimeofday(tv,tz);
   si=(tv->tv_sec);
   ti1=(tv->tv_usec);

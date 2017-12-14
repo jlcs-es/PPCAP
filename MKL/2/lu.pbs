@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -q batch
-#PBS -l nodes=saturno:ppn=1
+#PBS -l nodes=jupiter:ppn=1
 #PBS -l walltime=01:00:00
 #============= INICIO ================
 
@@ -21,7 +21,7 @@ cat $PBS_NODEFILE
 echo "Ahora ejecutamos las tareas secuenciales..."
 
 #./matriz_matriz < matriz_matriz.input
-for i in 3000 4000 5000; do echo -e "$i 10 10 20" | ./lu_bloques; done
-for i in 3000 4000 5000; do echo -e "$i 10 10 20" | ./lu_bloques_mkl; done
-for i in 3000 4000 5000; do echo -e "$i 10 20" | ./lu_mkl; done
+for i in 5000 7000 9000; do echo -e "$i 10 10 20" | ./lu_bloques; done
+for i in 5000 7000 9000; do echo -e "$i 10 10 20" | ./lu_bloques_mkl; done
+for i in 5000 7000 9000; do echo -e "$i 10 20" | ./lu_mkl; done
 #================ FIN =================

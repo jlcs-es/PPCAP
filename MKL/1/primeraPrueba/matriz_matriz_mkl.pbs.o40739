@@ -1,0 +1,7 @@
+Me muevo del directorio /home_nfs/mpp17-45 al directorio de trabajo /home_nfs/mpp17-45/blas
+Nodo donde se ha planificado el trabajo:
+saturno
+Ahora ejecutamos las tareas secuenciales...
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 2000: 0.878072 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 3000: 1.149646 seg 
+De las filas y columnas de la primera matriz y las columnas de la segunda: De los valores inferior y superior: Tamaño 4000: 2.310619 seg 

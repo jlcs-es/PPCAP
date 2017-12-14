@@ -64,6 +64,8 @@ void copiar_matriz(double *mo,int fmo,int cmo,int ldmo,double *md,int fmd,int cm
 
 void multiplicar_restar_matrices(double *a,int fa,int ca,int lda,double *b,int fb,int cb,int ldb,double *c,int fc,int cc,int ldc)
 {
+  mkl_set_dynamic( 0 );
+  mkl_set_num_threads( 1 );
   double alpha = -1.0; 
   double beta = 1.0;
   cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, fa, cb, ca, alpha, a, lda, b, ldb, beta, c, ldc);

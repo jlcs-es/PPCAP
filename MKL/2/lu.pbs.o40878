@@ -1,0 +1,13 @@
+Me muevo del directorio /home_nfs/mpp17-45 al directorio de trabajo /home_nfs/mpp17-45/mkl/lu
+Nodo donde se ha planificado el trabajo:
+jupiter
+Ahora ejecutamos las tareas secuenciales...
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 5000, bloque 10: 61.293587 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 7000, bloque 10: 168.515420 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 9000, bloque 10: 359.437214 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 5000, bloque 10: 6.558937 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 7000, bloque 10: 17.514004 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 9000, bloque 10: 36.840648 seg
+De la dimension de la matriz: De los valores inferior y superior: Tamaño matriz 5000: 5.908207 seg
+De la dimension de la matriz: De los valores inferior y superior: Tamaño matriz 7000: 12.960004 seg
+De la dimension de la matriz: De los valores inferior y superior: Tamaño matriz 9000: 27.409984 seg
