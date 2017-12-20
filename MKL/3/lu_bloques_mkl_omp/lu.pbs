@@ -1,0 +1,32 @@
+#!/bin/bash
+#PBS -q batch
+#PBS -l nodes=marte:ppn=6
+#PBS -l walltime=01:00:00
+#============= INICIO ================
+
+#Cargamos entorno de ejecucion
+source /etc/profile.d/modules.sh
+source /opt/intel/composerxe/bin/compilervars.sh intel64
+
+# en este caso no hace falta cargar ningun modulo
+# module load nada
+
+# Nos aseguramos que estamos en el directorio desde el que se envio el trabajo con qsub
+echo "Me muevo del directorio $PWD al directorio de trabajo $PBS_O_WORKDIR"
+cd $PBS_O_WORKDIR
+
+echo "Nodo donde se ha planificado el trabajo:"
+cat $PBS_NODEFILE
+
+echo "Ahora ejecutamos las tareas secuenciales..."
+
+#######################################
+
+for i in 7000 9000 11000; do echo -e "$i 10 10 20" | ./lu_bloques_mkl; done
+for i in 7000 9000 11000; do echo -e "$i 50 10 20" | ./lu_bloques_mkl; done
+for i in 7000 9000 11000; do echo -e "$i 100 10 20" | ./lu_bloques_mkl; done
+for i in 7000 9000 11000; do echo -e "$i 150 10 20" | ./lu_bloques_mkl; done
+for i in 7000 9000 11000; do echo -e "$i 200 10 20" | ./lu_bloques_mkl; done
+for i in 7000 9000 11000; do echo -e "$i 250 10 20" | ./lu_bloques_mkl; done
+
+#================ FIN =================

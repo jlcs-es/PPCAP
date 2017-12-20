@@ -1,0 +1,30 @@
+Me muevo del directorio /home_nfs/mpp17-45 al directorio de trabajo /home_nfs/mpp17-45/mkl/lu_mkl_openmp
+Nodo donde se ha planificado el trabajo:
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+saturno
+Ahora ejecutamos las tareas secuenciales...
+De la dimension de la matriz: De los valores inferior y superior: Tamaño matriz 5000: 1.138404 seg
+De la dimension de la matriz: De los valores inferior y superior: Tamaño matriz 7000: 2.283228 seg
+De la dimension de la matriz: De los valores inferior y superior: Tamaño matriz 9000: 5.050476 seg

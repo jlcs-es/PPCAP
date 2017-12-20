@@ -1,0 +1,27 @@
+Me muevo del directorio /home_nfs/mpp17-45 al directorio de trabajo /home_nfs/mpp17-45/mkl/lu_mkl_openmp/lu_bloques_mkl
+Nodo donde se ha planificado el trabajo:
+marte
+marte
+marte
+marte
+marte
+marte
+Ahora ejecutamos las tareas secuenciales...
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 7000, bloque 10: 14.670943 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 9000, bloque 10: 31.056077 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 11000, bloque 10: 55.859629 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 7000, bloque 50: 4.711536 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 9000, bloque 50: 9.719458 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 11000, bloque 50: 17.473662 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 7000, bloque 100: 4.381563 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 9000, bloque 100: 8.967805 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 11000, bloque 100: 16.121736 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 7000, bloque 150: 4.565176 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 9000, bloque 150: 9.211762 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 11000, bloque 150: 16.331938 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 7000, bloque 200: 4.580018 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 9000, bloque 200: 9.279753 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 11000, bloque 200: 16.334551 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 7000, bloque 250: 4.804477 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 9000, bloque 250: 9.558276 seg
+De la dimension de la matriz: De el tamaño de bloque: De los valores inferior y superior: Tamaño matriz 11000, bloque 250: 16.809873 seg
